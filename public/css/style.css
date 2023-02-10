@@ -328,11 +328,11 @@ ion-icon {
 @keyframes efeito-like {
 
   from {
-    transform: scale(0.2) translate(-50%, -50%);
+    font-size: 30px;
   }
 
   to {
-    transform: scale(1) translate(-50%, -50%);
+    font-size: 150px;
   }
 }
 
@@ -344,7 +344,6 @@ ion-icon {
   z-index: 1;
   transform: translate(-50%, -50%);
   transform-origin: center;
-  transition: all 0.3s;
   color: white;
 }
 
