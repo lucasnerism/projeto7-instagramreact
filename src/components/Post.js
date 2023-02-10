@@ -94,7 +94,17 @@ export default function Post(props) {
     return (
       <div class="acoes">
         <div>
-          <ion-icon data-test="like-post" class={classe} name={coracao} onClick={handleLike}></ion-icon>
+          <ion-icon data-test="like-post" class={classe} name={coracao} onClick={() => {
+            if (coracao === "heart-outline") {
+              setCoracao("heart");
+              setClasse("vermelho");
+              setLikes(likes + 1);
+            } else {
+              setCoracao("heart-outline");
+              setClasse("");
+              setLikes(likes - 1);
+            }
+          }}></ion-icon>
           <ion-icon name="chatbubble-outline"></ion-icon>
           <ion-icon name="paper-plane-outline"></ion-icon>
         </div>
