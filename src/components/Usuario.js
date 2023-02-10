@@ -1,8 +1,9 @@
 import React from "react";
 
-export default function Usuario(props) {
-  const [user, setUser] = React.useState(props.nome);
-  const [img, setImg] = React.useState(props.imagem);
+export default function Usuario() {
+  const [user, setUser] = React.useState("lucasnerism");
+  const [img, setImg] = React.useState("./assets/img/kayds.png");
+
 
   return (
     <div className="usuario">
