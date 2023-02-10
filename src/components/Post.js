@@ -32,7 +32,7 @@ export default function Post(props) {
   function Conteudo() {
     return (
       <div class="conteudo">
-        {(props.video != undefined) ? <Video /> : <Imagem />}
+        {(props.video !== undefined) ? <Video /> : <Imagem />}
         <ion-icon name="heart" class={efeito}></ion-icon>
       </div>
     );
@@ -99,7 +99,7 @@ export default function Post(props) {
           <ion-icon name="paper-plane-outline"></ion-icon>
         </div>
         <div>
-          <ion-icon name={salvo} onClick={() => {
+          <ion-icon data-test="save-post" name={salvo} onClick={() => {
             if (salvo === "bookmark-outline") setSalvo("bookmark");
             else setSalvo("bookmark-outline");
           }}></ion-icon>

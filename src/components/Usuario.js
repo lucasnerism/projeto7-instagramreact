@@ -18,7 +18,7 @@ export default function Usuario(props) {
 
   function alterarDadosUsuario(tipo) {
     const novo = prompt(`Qual ${tipo} você deseja utilizar`).trim();
-    if (novo.length != 0) {
+    if (novo.length !== 0) {
       if (tipo === "nome") setUser(novo);
       else setImg(novo);
     }
