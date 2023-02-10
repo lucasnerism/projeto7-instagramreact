@@ -10,7 +10,10 @@ export default function Post(props) {
   return (
     <div className="post" data-test="post">
       <Topo />
-      <Conteudo />
+      <div className="conteudo">
+        {(props.video !== undefined) ? <Video /> : <Imagem />}
+        <ion-icon name="heart" class={efeito}></ion-icon>
+      </div>
       <div className="fundo">
         <div className="acoes">
           <div>
