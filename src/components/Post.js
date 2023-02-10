@@ -3,26 +3,56 @@ import React from "react";
 export default function Post(props) {
   const [likes, setLikes] = React.useState(Math.floor(Math.random() * 100));
   const [salvo, setSalvo] = React.useState("bookmark-outline");
-  const [classe, setClasse] = React.useState("");
+  const [classnamee, setclassnamee] = React.useState("");
   const [coracao, setCoracao] = React.useState("heart-outline");
   const [efeito, setEfeito] = React.useState("escondido");
 
   return (
-    <div class="post" data-test="post">
+    <div classname="post" data-test="post">
       <Topo />
       <Conteudo />
-      <Fundo />
+      <div classname="fundo">
+        <div classname="acoes">
+          <div>
+            <ion-icon data-test="like-post" classname={classnamee} name={coracao} onClick={() => {
+              if (coracao === "heart-outline") {
+                setCoracao("heart");
+                setclassnamee("vermelho");
+                setLikes(likes + 1);
+              } else {
+                setCoracao("heart-outline");
+                setclassnamee("");
+                setLikes(likes - 1);
+              }
+            }}></ion-icon>
+            <ion-icon name="chatbubble-outline"></ion-icon>
+            <ion-icon name="paper-plane-outline"></ion-icon>
+          </div>
+          <div>
+            <ion-icon data-test="save-post" name={salvo} onClick={() => {
+              if (salvo === "bookmark-outline") setSalvo("bookmark");
+              else setSalvo("bookmark-outline");
+            }}></ion-icon>
+          </div>
+        </div>
+        <div div classname="curtidas" >
+          <img src="assets/img/kayds.png" alt="kayds" />
+          <div classname="texto" >
+            Curtido por <strong>kayds</strong> e <strong data-test="likes-number" >outras {likes} pessoas</strong>
+          </div>
+        </div>
+      </div>
     </div>
   );
 
   function Topo() {
     return (
-      <div class="topo">
-        <div class="usuario">
+      <div classname="topo">
+        <div classname="usuario">
           <img src={props.imagemusuario} alt={props.nomeusuario} />
           {props.nomeusuario}
         </div>
-        <div class="acoes">
+        <div classname="acoes">
           <ion-icon name="ellipsis-horizontal"></ion-icon>
         </div>
       </div>
@@ -31,18 +61,45 @@ export default function Post(props) {
 
   function Conteudo() {
     return (
-      <div class="conteudo">
+      <div classname="conteudo">
         {(props.video !== undefined) ? <Video /> : <Imagem />}
-        <ion-icon name="heart" class={efeito}></ion-icon>
+        <ion-icon name="heart" classname={efeito}></ion-icon>
       </div>
     );
   }
 
   function Fundo() {
     return (
-      <div class="fundo">
-        <Acoes />
-        <Curtidas />
+      <div classname="fundo">
+        <div classname="acoes">
+          <div>
+            <ion-icon data-test="like-post" classname={classnamee} name={coracao} onClick={() => {
+              if (coracao === "heart-outline") {
+                setCoracao("heart");
+                setclassnamee("vermelho");
+                setLikes(likes + 1);
+              } else {
+                setCoracao("heart-outline");
+                setclassnamee("");
+                setLikes(likes - 1);
+              }
+            }}></ion-icon>
+            <ion-icon name="chatbubble-outline"></ion-icon>
+            <ion-icon name="paper-plane-outline"></ion-icon>
+          </div>
+          <div>
+            <ion-icon data-test="save-post" name={salvo} onClick={() => {
+              if (salvo === "bookmark-outline") setSalvo("bookmark");
+              else setSalvo("bookmark-outline");
+            }}></ion-icon>
+          </div>
+        </div>
+        <div div classname="curtidas" >
+          <img src="assets/img/kayds.png" alt="kayds" />
+          <div classname="texto" >
+            Curtido por <strong>kayds</strong> e <strong data-test="likes-number" >outras {likes} pessoas</strong>
+          </div>
+        </div>
       </div>
     );
   }
@@ -81,9 +138,9 @@ export default function Post(props) {
 
   function Curtidas() {
     return (
-      <div div class="curtidas" >
+      <div div classname="curtidas" >
         <img src="assets/img/kayds.png" alt="kayds" />
-        <div class="texto" >
+        <div classname="texto" >
           Curtido por <strong>kayds</strong> e <strong data-test="likes-number" >outras {likes} pessoas</strong>
         </div>
       </div>
@@ -92,16 +149,16 @@ export default function Post(props) {
 
   function Acoes() {
     return (
-      <div class="acoes">
+      <div classname="acoes">
         <div>
-          <ion-icon data-test="like-post" class={classe} name={coracao} onClick={() => {
+          <ion-icon data-test="like-post" classname={classnamee} name={coracao} onClick={() => {
             if (coracao === "heart-outline") {
               setCoracao("heart");
-              setClasse("vermelho");
+              setclassnamee("vermelho");
               setLikes(likes + 1);
             } else {
               setCoracao("heart-outline");
-              setClasse("");
+              setclassnamee("");
               setLikes(likes - 1);
             }
           }}></ion-icon>
@@ -121,11 +178,11 @@ export default function Post(props) {
   function handleLike() {
     if (coracao === "heart-outline") {
       setCoracao("heart");
-      setClasse("vermelho");
+      setclassnamee("vermelho");
       setLikes(likes + 1);
     } else {
       setCoracao("heart-outline");
-      setClasse("");
+      setclassnamee("");
       setLikes(likes - 1);
     }
   }

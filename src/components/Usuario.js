@@ -5,9 +5,9 @@ export default function Usuario(props) {
   const [img, setImg] = React.useState(props.imagem);
 
   return (
-    <div class="usuario">
+    <div classname="usuario">
       <img data-test="profile-image" src={img} alt="imagem de perfil" onClick={() => { alterarDadosUsuario("imagem"); }} />
-      <div class="texto">
+      <div classname="texto">
         <span>
           <strong data-test="name">{user}</strong>
           <ion-icon data-test="edit-name" onClick={() => { alterarDadosUsuario("nome"); }} name="pencil"></ion-icon>

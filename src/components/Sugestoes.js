@@ -10,8 +10,8 @@ const sugest = [
 
 export default function Sugestoes() {
   return (
-    <div class="sugestoes">
-      <div class="titulo">
+    <div classname="sugestoes">
+      <div classname="titulo">
         Sugestões para você
         <div>Ver tudo</div>
       </div>
