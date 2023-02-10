@@ -5,6 +5,7 @@ export default function Post(props) {
   const [salvo, setSalvo] = React.useState("bookmark-outline");
   const [classe, setClasse] = React.useState("");
   const [coracao, setCoracao] = React.useState("heart-outline");
+  const [efeito, setEfeito] = React.useState("escondido");
 
   if (props.video != undefined) {
     return (
@@ -20,17 +21,22 @@ export default function Post(props) {
         </div>
 
         <div class="conteudo">
-          <video data-test="post-imageDouble" onClick={() => {
+          <video data-test="post-imageDouble" onDoubleClick={() => {
             if (coracao === "heart-outline") {
               setCoracao("heart");
               setClasse("vermelho");
               setLikes(likes + 1);
+              setEfeito("like");
+              setTimeout(() => {
+                setEfeito("escondido");
+              }, 500);
             }
           }} autoPlay muted>
             <source src={props.video} type="video/mp4" />
             <source src={props.videoogv} type="video/ogv" />
             "Seu navegador não suporta vídeos."
           </video>
+          <ion-icon name="heart" class={efeito}></ion-icon>
         </div>
 
         <div class="fundo">
@@ -60,11 +66,12 @@ export default function Post(props) {
 
           <div class="curtidas">
             <img src="assets/img/kayds.png" alt="kayds" />
-            <div class="texto">
-              Curtido por <strong>kayds</strong> e <strong>outras</strong> <strong data-test="likes-number">{likes}</strong> <strong>pessoas</strong>
+            <div class="texto" data-test="likes-number" >
+              Curtido por <strong>kayds</strong> e <strong>outras {likes} pessoas</strong>
             </div>
           </div>
         </div>
+
       </div>
     );
   } else return (
@@ -80,13 +87,18 @@ export default function Post(props) {
       </div>
 
       <div class="conteudo">
-        <img data-test="post-image" onClick={() => {
+        <img data-test="post-image" onDoubleClick={() => {
           if (coracao === "heart-outline") {
             setCoracao("heart");
             setClasse("vermelho");
             setLikes(likes + 1);
+            setEfeito("like");
+            setTimeout(() => {
+              setEfeito("escondido");
+            }, 500);
           }
         }} src={props.imagem} alt={props.altimagem} />
+        <ion-icon name="heart" class={efeito}></ion-icon>
       </div>
 
       <div class="fundo">
@@ -121,6 +133,7 @@ export default function Post(props) {
           </div>
         </div>
       </div>
+
     </div>
   );
 };;

@@ -191,6 +191,9 @@ body {
   width: 100%;
 }
 
+.conteudo {
+  position: relative;
+}
 
 .post .fundo .acoes {
   display: flex;
@@ -320,4 +323,36 @@ ion-icon {
 
 .vermelho {
   color: red;
+}
+
+@keyframes efeito-like {
+
+  from {
+    transform: scale(0.2) translate(-50%, -50%);
+  }
+
+  to {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+
+.conteudo>ion-icon {
+  font-size: 150px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  transition: all 0.3s;
+  color: white;
+}
+
+.like {
+  animation-name: efeito-like;
+  animation-duration: 0.3s;
+}
+
+.escondido {
+  display: none;
 }
