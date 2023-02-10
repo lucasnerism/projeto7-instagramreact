@@ -12,10 +12,10 @@ const stories = [
 
 export default function Stories() {
   return (
-    <div classname="stories">
-      {stories.map(item => (<Story nome={item.nome} imagem={item.imagem} />))}
+    <div className="stories">
+      {stories.map((item, index) => (<Story key={index} nome={item.nome} imagem={item.imagem} />))}
 
-      <div classname="setinha">
+      <div className="setinha">
         <ion-icon name="chevron-forward-circle"></ion-icon>
       </div>
     </div>

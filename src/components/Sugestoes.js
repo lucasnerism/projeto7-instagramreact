@@ -10,12 +10,12 @@ const sugest = [
 
 export default function Sugestoes() {
   return (
-    <div classname="sugestoes">
-      <div classname="titulo">
+    <div className="sugestoes">
+      <div className="titulo">
         Sugestões para você
         <div>Ver tudo</div>
       </div>
-      {sugest.map(item => (<Sugestao nome={item.nome} imagem={item.imagem} />))}
+      {sugest.map(item => (<Sugestao key={item.nome} nome={item.nome} imagem={item.imagem} />))}
     </div>
   );
 }

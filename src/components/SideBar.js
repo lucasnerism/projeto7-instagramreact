@@ -3,15 +3,15 @@ import Usuario from "./Usuario";
 
 export default function SideBar() {
   return (
-    <div classname="sidebar">
+    <div className="sidebar">
       <Usuario nome="lucasnerism" imagem="./assets/img/kayds.png" />
       <Sugestoes />
-      <div classname="links">
+      <div className="links">
         Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos •
         Localizações • Contas mais relevantes • Hashtags • Idioma
       </div>
 
-      <div classname="copyright">© 2021 INSTAGRAM DO FACEBOOK</div>
+      <div className="copyright">© 2021 INSTAGRAM DO FACEBOOK</div>
     </div>
   );
 }

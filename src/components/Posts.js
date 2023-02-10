@@ -4,8 +4,8 @@ const postagem = [{ nomeusuario: "lucasnerism", imagemusuario: "./assets/img/kay
 
 export default function Posts() {
   return (
-    <div classname="posts">
-      {postagem.map(item => (<Post nomeusuario={item.nomeusuario} imagemusuario={item.imagemusuario} imagem={item.imagem} altimagem={item.altimagem} video={item.video} videoogv={item.videoogv} />))}
+    <div className="posts">
+      {postagem.map((item, index) => (<Post key={index} nomeusuario={item.nomeusuario} imagemusuario={item.imagemusuario} imagem={item.imagem} altimagem={item.altimagem} video={item.video} videoogv={item.videoogv} />))}
 
     </div>
   );

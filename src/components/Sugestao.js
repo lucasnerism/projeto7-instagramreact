@@ -1,18 +1,18 @@
 export default function Sugestao(props) {
   return (
-    <div classname="sugestao">
-      <div classname="usuario">
+    <div className="sugestao">
+      <div className="usuario">
         <img
           src={props.imagem}
           alt={props.nome}
         />
-        <div classname="texto">
-          <div classname="nome">{props.nome}</div>
-          <div classname="razao">Segue você</div>
+        <div className="texto">
+          <div className="nome">{props.nome}</div>
+          <div className="razao">Segue você</div>
         </div>
       </div>
 
-      <div classname="seguir">Seguir</div>
+      <div className="seguir">Seguir</div>
     </div>
   );
 }
