@@ -66,8 +66,8 @@ export default function Post(props) {
 
           <div class="curtidas">
             <img src="assets/img/kayds.png" alt="kayds" />
-            <div class="texto" data-test="likes-number" >
-              Curtido por <strong>kayds</strong> e <strong>outras {likes} pessoas</strong>
+            <div class="texto" >
+              Curtido por <strong>kayds</strong> e <strong data-test="likes-number" >outras {likes} pessoas</strong>
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ export default function Post(props) {
         <div class="curtidas">
           <img src="assets/img/kayds.png" alt="kayds" />
           <div class="texto">
-            Curtido por <strong>kayds</strong> e <strong>outras {likes} pessoas</strong>
+            Curtido por <strong>kayds</strong> e <strong data-test="likes-number">outras {likes} pessoas</strong>
           </div>
         </div>
       </div>
