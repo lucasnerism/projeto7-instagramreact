@@ -56,7 +56,7 @@ export default function Post(props) {
             <ion-icon name="paper-plane-outline"></ion-icon>
           </div>
           <div>
-            <ion-icon name={salvo} onClick={() => {
+            <ion-icon data-test="save-post" name={salvo} onClick={() => {
               if (salvo === "bookmark-outline") setSalvo("bookmark");
               else setSalvo("bookmark-outline");
             }}></ion-icon>
