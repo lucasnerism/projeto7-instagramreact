@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# **Projeto [Instagram (React)](https://lucasnerism.github.io/projeto7-instagramreact/)**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Neste mini projeto foi transformado um projeto já feito em html+css num projeto React, com os requisitos descritos abaixo.
 
-## Available Scripts
+Cada passo do desenvolvimento do projeto foi _versionada_ no`GitHub`. Vocês podem acompanhar o processo nos`commits`no [repositório do projeto](https://lucasnerism.github.io/projeto7-instagramreact/).
 
-In the project directory, you can run:
+[> O projeto pode ser acessado online aqui <](https://lucasnerism.github.io/projeto7-instagramreact/)
 
-### `npm start`
+Para executar esse projeto localmente você precisa ter o [Node.js](https://nodejs.org/) instalado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Este projeto é sobre
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `React`
+- `Componentização`
+- `Utilização de estados`
 
-### `npm test`
+## ✅ Requisitos Obrigatórios
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details open>
+<summary>Versionamento do código</summary>
 
-### `npm run build`
+- [ ] Versionamento usando Git é obrigatório, crie um **repositório público** no seu perfil do GitHub.
+- [ ] Faça _commits_ a cada funcionalidade implementada.
+</details>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<details open>
+<summary>Layout</summary>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [ ]  Você pode utilizar o seu próprio código do [Instagram](https://github.com/lucasnerism/projeto2-instagram) para iniciar o projeto ou utilizar o que nós fornecemos no fim desse enunciado 😃
+- [ ]  O *layout* é quase o mesmo do Instagram que vocês fizeram no início do curso! A única diferença é que só há um nome para o usuário com um ícone de lápis depois dele (pode usar o do ion-icons). Consulte o Figma para fazer os ajustes necessários.
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<details open>
+<summary>Componentes</summary>
 
-### `npm run eject`
+- [ ]  A página deve ser componentizada em arquivos diferentes, utilizando `import`/`export`:
+  <details open>    
+  <summary>Lista dos componentes que deverão ser feitos</summary>
+  
+    - `App`
+    - `Corpo`
+    - `SideBar`
+    - `NavBar`
+    - `Usuario`
+    - `Stories` (onde cada item será um componente diferente, o `Story`)
+    - `Posts` (onde cada item será um componente diferente, o `Post`)
+    - `Sugestoes` (onde cada item será um componente diferente, o `Sugestao`)
+     </details>
+- [ ]  Todos os itens repetitivos do projeto devem ser representados como Arrays/Objetos nos componentes e renderizados no JSX usando `map`. No projeto, esses itens são:
+    - Os stories (deve ter pelo menos 3 stories)
+    - Os posts (deve ter pelo menos 3 posts)
+    - As sugestões de seguidores (deve ter pelo menos 3 sugestões)
+    - O usuário acima das sugestões (este não é um array, mas os dados devem vir de props)
+</details>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<details open>
+<summary>Dados dinâmicos</summary>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [ ]  O projeto também deverá ter alguns dados dinâmicos que irão mudar na tela. São eles:
+    - [ ]  Nome de usuário (ao apertar o lápis, aparece um `prompt` para alterá-lo). Se for passada uma string vazia, não atualiza.
+    - [ ]  Imagem de perfil (ao clicar uma vez na imagem, aparece um `prompt` pedindo novo link). Se for passada uma string vazia, não atualiza.
+    - [ ]  Salvar o post (ao clicar no ícone de salvar o post, ele deverá ficar preenchido).
+        - Caso a postagem já esteja salva, ao clicar no ícone, a postagem deve passar para não salva.
+    - [ ]  *Like* no post:
+        - Ao clicar no ícone do *like* o usuário poderá curtir a postagem. Ou seja, o ícone de coração deverá ficar preenchido e vermelho.
+            - Caso a postagem já esteja curtida, ao clicar no ícone, a postagem deve passar para não curtida.
+        - Ao clicar na imagem de um post do *feed*, o usuário poderá curtir a postagem, ou seja, o botão do *like* deverá ficar preenchido em vermelho.
+            - OBS: assim como no Instagram de verdade, clicar na imagem **NÃO** retira *likes*, apenas adiciona caso já não tenha.
+        - Sobre a frase de “Curtido por *fulano* e outras **xxx** pessoas”:
+            - O número de *likes* deverá aumentar quando a pessoa der um *like* e diminuir quando retirá-lo.
+            - O início da frase “Curtido por *fulano*” pode ter qualquer valor no lugar de *fulano*, não precisa ser o nome do usuário logado nem mudar quando o post for curtido.
+</details>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ✅ Requisitos Bônus
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<details open>
+<summary>Like com double click na imagem</summary>
 
-## Learn More
+- [ ]  Para dar *like* clicando na imagem, é necessário clicar duas vezes seguidas, rapidamente.
+  - Clicar duas vezes com um intervalo de tempo grande NÃO CONFIGURA *double click*. Só serão aceitas implementações usando `onDoubleClick` do React ou evento nativo equivalente:
+</details>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<details open>
+<summary>Animação de coração no double click</summary>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [ ]  Quando ocorrer o *double click* na imagem, deverá surgir no centro da imagem um coração, que primeiro cresce e depois desaparece.    
+- [ ]  Parâmetros da animação:
+    - Escala inicial: 0.2
+    - Escala final: 1
+    - Tempo da animação: 0.3s
+    - Cor do coração: white
+    - Após 0.5s, o coração some da tela
+</details>
